@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>beginPath, arc y stroke</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="1000" height="500" style="border:2px solid #000000;"></canvas>
+    <script>
+        var canvas = document.getElementById('myCanvas'); var ctx = canvas.getContext('2d');
+        var ctx = canvas.getContext("2d");
+
+        ctx.fillStyle = "rgb(125,136,229)";
+        ctx.fillRect (10, 10, 110, 100);
+
+        ctx.fillStyle = "rgb(205,0,9)";
+        ctx.fillRect (100, 90, 110, 100);
+
+        ctx.fillStyle = "rgba(255,150,255,0.5)";
+        ctx.fillRect (190, 170, 110, 100);
+
+        ctx.beginPath();
+        ctx.moveTo(400,20);
+        ctx.lineTo(400,200)
+        ctx.lineTo(585,200);
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.moveTo(585,200);
+        ctx.lineTo(800,350);
+        ctx.stroke();
+        ctx.closePath();
+
+        ctx.fillStyle = "green";
+
+        ctx.beginPath();
+        ctx.arc(300,400,50,0,2 * Math.PI);
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.arc(410,400,50,0,2 * Math.PI);
+        ctx.stroke();
+        ctx.closePath();
+
+
+
+
+    </script>
+</body>
+</html>
